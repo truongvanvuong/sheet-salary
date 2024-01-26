@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary {
+  @apply bg-primaryColor border rounded box-border text-white cursor-pointer text-base font-extrabold text-center select-none touch-manipulation px-[20px] py-2 border-solid border-primaryColor hover:opacity-90 transition-opacity;
+  outline: none;
+  outline: 0;
+  -webkit-user-select: none;
+}
