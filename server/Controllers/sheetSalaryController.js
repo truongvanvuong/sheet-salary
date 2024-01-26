@@ -28,12 +28,14 @@ const getSheetSalary = async (req, res) => {
     const startDate = new Date(parsedYear, parsedMonth - 1, 1);
     const endDate = new Date(parsedYear, parsedMonth, 0);
 
-    const sheetSalaryData = await sheetSalary.find({
-      createdAt: {
-        $gte: startDate,
-        $lte: endDate,
-      },
-    });
+    const sheetSalaryData = await sheetSalary
+      .find({
+        createdAt: {
+          $gte: startDate,
+          $lte: endDate,
+        },
+      })
+      .populate('user');
     res.status(200).json({
       success: true,
       data: sheetSalaryData,

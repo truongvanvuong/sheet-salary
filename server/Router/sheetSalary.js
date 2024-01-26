@@ -4,6 +4,7 @@ import {
   getSheetSalary,
   getAllSheetSalary,
 } from '../Controllers/sheetSalaryController.js';
+
 const router = express.Router();
 
 router.post('/', createSheetSalary);

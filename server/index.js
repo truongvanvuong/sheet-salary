@@ -12,6 +12,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
+
 const corsOptions = {
   origin: true,
   credentials: true,
@@ -24,6 +25,7 @@ const connect = async () => {
     console.log('Connected to mongodb failed: ' + error);
   }
 };
+
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser(corsOptions));
@@ -34,6 +36,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/sheet-salary', sheetSalaryRouter);
 app.use('/api/users', userRouter);
+
 app.listen(port, () => {
   connect();
   console.log('listening on port ' + port);
